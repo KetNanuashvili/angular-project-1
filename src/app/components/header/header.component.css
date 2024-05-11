@@ -1,0 +1,66 @@
+.header-div{
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+    background-color: #222222;
+    height: 60px;
+    text-shadow: 5px 5px 6px black;
+}
+.navigation-div1{
+    padding-top: 10px;
+    padding-left: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+            position: relative;
+}
+.main-logo{
+    font-size: 40px;
+    color: var(--main-color);
+    font-family: 'Old Standard TT';
+}
+.navigation{
+    max-width: 650px;
+    width: 100%;
+}
+.nav-ul{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+.color{
+    font-family: 'Nunito regular';
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: red;
+    font-weight: 700;
+    position: relative;
+    cursor: pointer;
+}
+.color:hover{
+    color: var(--main-color);
+}
+.color::after{
+    content: '';
+    height: 3px;
+    width: 0%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color:var(--important-color2);
+}
+.color:hover::after{
+    background-color: var(--important-color2);
+    width: 100%;
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
