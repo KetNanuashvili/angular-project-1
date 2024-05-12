@@ -1,103 +1,11 @@
+<div class="section-div">
+    <h4 class="h4-title">Want To Eat?</h4>
+    <p class="paragrap-4">Try our Most Delicious food and it usually take minutes to deliver!</p>
 
-<div class="fourth-section-div" style="margin-top: 200px; margin-bottom: 200px;" >
-    <!--six display flex divs-->
-    <div>
-        <div class="six-room-divs">
-            <!--first div-->
-            <div class="room-div6">
-                <div class="room-img-div">
-                    <img class="room-img6" src="../../../../../assets/tour-1.jpg" alt="roompicture">
-                </div>
-                <div class="room-texts-div">
-                    <h3 class="h3-room  text">Suite Room</h3>
-                    <p class="p-room">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                         there live the blind texts.</p>
-                    <div class="before-div">
-                        <div class="book-now-div">
-                            <h3 class="book6">BOOK NOW</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--div 2-->
-            <div class="room-div6">
-                <div class="room-img-div">
-                    <img class="room-img6" src="../../../../../assets/room-3.jpg" alt="roompicture">
-                </div>
-                <div class="room-texts-div">
-                    <h3 class="h3-room text">Suite Room</h3>
-                    <p class="p-room">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                         there live the blind texts.</p>
-                    <div class="before-div">
-                        <div class="book-now-div">
-                            <h3 class="book6">BOOK NOW</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--div 3-->
-            <div class="room-div6">
-                <div class="room-img-div">
-                    <img class="room-img6" src="../../../../../assets/room-4.jpg" alt="roompicture">
-                </div>
-                <div class="room-texts-div">
-                    <h3 class="h3-room text">Suite Room</h3>
-                    <p class="p-room">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                         there live the blind texts.</p>
-                    <div class="before-div">
-                        <div class="book-now-div">
-                            <h3 class="book6">BOOK NOW</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--div4-->
-            <div class="room-div6 fourth-div">
-                <div class="room-img-div">
-                    <img class="room-img6" src="../../../../../assets/room-5.jpg" alt="roompicture">
-                </div>
-                <div class="room-texts-div">
-                    <h3 class="h3-room text">Suite Room</h3>
-                    <p class="p-room">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                         there live the blind texts.</p>
-                    <div class="before-div">
-                        <div class="book-now-div">
-                            <h3 class="book6">BOOK NOW</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--div5-->
-            <div class="room-div6">
-                <div class="room-img-div">
-                    <img class="room-img6" src="../../../../../assets/room-6.jpg" alt="roompicture">
-                </div>
-                <div class="room-texts-div">
-                    <h3 class="h3-room text">Suite Room</h3>
-                    <p class="p-room">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                         there live the blind texts.</p>
-                    <div class="before-div">
-                        <div class="book-now-div">
-                            <h3 class="book6">BOOK NOW</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--div 6-->
-            <div class="room-div6">
-                <div class="room-img-div">
-                    <img class="room-img6" src="../../../../../assets/small-img1.jpg" alt="roompicture">
-                </div>
-                <div class="room-texts-div">
-                    <h3 class="h3-room text">Suite Room</h3>
-                    <p class="p-room">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                         there live the blind texts.</p>
-                    <div class="before-div">
-                        <div class="book-now-div">
-                             <h3 class="book6">BOOK NOW</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="six-divs" *ngIf="data">
+        <div [routerLink]="['/details/', item.id]" class="small-divs6" *ngFor="let item of data">
+            <div class="burger-icons" [style.backgroundImage]="'url(' + item.img + ')'"></div>
+            <h6 class="h6-icons">{{item.title}}</h6>
         </div>
-
+    </div>
+</div>

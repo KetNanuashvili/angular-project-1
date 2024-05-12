@@ -1,37 +1,5 @@
-<div class="section-div">
-    <h4 class="h4-title">Want To Eat?</h4>
-    <p class="paragrap-4">Try our Most Delicious food and it usually take minutes to deliver!</p>
-
-    <div class="six-divs" *ngIf="data">
-        <div class="small-divs6" *ngFor="let item of data">
-            <div class="burger-icons" [style.backgroundImage]="'url(' + item.img + ')'"></div>
-            <h6 class="h6-icons">{{item.title}}</h6>
-        </div>
-    </div>
-    <!-- <div class="six-divs">
-        <div class="small-divs6">
-            <img class="burger-icons" src="../../../../../assets/burger.svg" alt="burger-icon">
-            <h6 class="h6-icons">Burger</h6>
-        </div>
-        <div class="small-divs6">
-            <img class="burger-icons" src="../../../../../assets/pizza.svg" alt="pizza">
-            <h6 class="h6-icons">Pizza</h6>
-        </div>
-        <div class="small-divs6">
-            <img class="burger-icons" src="../../../../../assets/fries.svg" alt="fries">
-            <h6 class="h6-icons">Fast Food</h6>
-        </div>
-        <div class="small-divs6">
-            <img class="burger-icons" src="../../../../../assets/ice-cream.svg" alt="ice-cream">
-            <h6 class="h6-icons">Cupcake</h6>+
-        </div>
-        <div class="small-divs6">
-            <img class="burger-icons sandvich" src="../../../../../assets/sandwich-22.png" alt="sandvich">
-            <h6 class="h6-icons">Sandwich</h6>
-        </div>
-        <div class="small-divs6">
-            <img class="burger-icons" src="../../../../../assets/spagetti.svg" alt="spagetti">
-            <h6 class="h6-icons">spaghetti</h6>
-        </div>
-    </div> -->
-</div>
+<ng-container *ngIf="printData">
+    <h1 style="font-size: 50px; color: white;">{{printData.title}}</h1>
+    <img [src]="printData.img" alt="">
+    <p style="font-size: 20px;color: white;">{{printData.longText}}</p>
+</ng-container>

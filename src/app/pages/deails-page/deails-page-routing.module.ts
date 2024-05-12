@@ -5,7 +5,7 @@ import { MainComponent } from './component/main/main.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: ':id',
     component: MainComponent
   }
 ];
