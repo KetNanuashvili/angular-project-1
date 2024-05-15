@@ -1,0 +1,22 @@
+<div style="display: flex; align-items: center; flex-direction: column;">
+
+<form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)" style="max-width: 1000px; padding: 50px; background-color: blueviolet;">
+
+    <input type="text" formControlName="firstName" placeholder="firstName">
+    <div *ngIf="myForm.get('firstName').touched && myForm.get('firstName').hasError('required')">
+      გთხოვთ ჩაწეროთ სახელი
+    </div>
+    <input type="email" formControlName="email" placeholder="email">
+    <div *ngIf="myForm.get('firstName').touched && myForm.get('email').hasError('required')">
+      გთხოვთ ჩაწეროთ იმეილი
+    </div>
+
+    <input type="text" formControlName="message" placeholder="message">
+    <div *ngIf="myForm.get('firstName').touched && myForm.get('message').hasError('required')">
+      გთხოვთ დაგვიტოვოთ მესიჯი
+    </div>
+    <button> send</button>
+  
+  </form>
+    
+</div>

@@ -9,9 +9,12 @@ const routes: Routes = [
   {
     path: 'details',
     loadChildren: ()=> import('./pages/deails-page/deails-page.module').then(item=> item.DeailsPageModule)
+  },
+  {
+    path: 'forms',
+    loadChildren: ()=> import('./pages/forms-page/forms-page.module').then(item=> item.FormsPageModule)
   }
-];
-
+]
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
