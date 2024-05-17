@@ -1,19 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Route } from '@angular/router';
 import { ServiceService } from '../../../../services/service.service';
-interface dataInterface {
-  id: number,
-  img:string,
-  title: string,
-  longText: string
-}
+import { InterfaceData } from '../../../../interface/interface-data';
+
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrl: './main.component.css'
 })
 export class MainComponent implements OnInit {
-  public data: dataInterface[]=[];
+  public data: InterfaceData[]=[];
 
   constructor(private serviceService: ServiceService){
 

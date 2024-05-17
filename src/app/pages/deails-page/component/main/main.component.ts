@@ -1,13 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Data } from '@angular/router';
 import { ServiceService } from '../../../../services/service.service';
+import { InterfaceData } from '../../../../interface/interface-data';
 
-interface dataInterface {
-  id: number,
-  img:string,
-  title: string,
-  longText: string
-}
+
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -15,8 +11,8 @@ interface dataInterface {
 })
 export class MainComponent implements OnInit{
 
-  public data: dataInterface[] = [];
-  public item: dataInterface | undefined;
+  public data: InterfaceData[] = [];
+  public item: InterfaceData | undefined;
   public id: number | undefined;
 
   constructor(private route: ActivatedRoute,private serviceService: ServiceService){
