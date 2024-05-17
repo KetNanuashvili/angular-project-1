@@ -1,5 +1,6 @@
-<ng-container *ngIf="printData">
-    <h1 style="font-size: 50px; color: white;">{{printData.title}}</h1>
-    <img [src]="printData.img" alt="">
-    <p style="font-size: 20px;color: white;">{{printData.longText}}</p>
-</ng-container>
+
+    <div *ngIf="this.item">
+        <h1 style="font-size: 50px; color: white;">{{item.title}}</h1>
+        <img [src]="item.img" alt="">
+        <p style="font-size: 20px;color: white;">{{item.longText}}</p>
+    </div>
