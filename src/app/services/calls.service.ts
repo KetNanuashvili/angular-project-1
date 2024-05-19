@@ -15,9 +15,10 @@ export class CallsService {
     
     }
   
-    deleteItem(id: number): Observable<any>{
-      return this.httpClient.delete( 'https://jsonplaceholder.typicode.com/posts' + id);
-    }
+   
+  deleteItem(id: number): Observable<any> {
+    return this.httpClient.delete(`https://jsonplaceholder.typicode.com/posts/${id}`);
+  }
   }
 
 

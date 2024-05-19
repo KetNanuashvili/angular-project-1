@@ -16,16 +16,26 @@ export class CallsComponent implements OnInit {
     this.callsService.getData().subscribe((res)=>{
       this.data=res;
       console.log(this.data);
-      
+  
     })
   }
 
-  // delete(item: { id: number; }){
-  //   console.log(item);
-  //   this.callsService.deleteItem(item.id).subscribe((res)=>{
-  //     console.log(res);
-      
-  //   })
-  // }
-
+  delete(item: { id: number; }){
+    console.log(item);
+    this.callsService.deleteItem(item.id).subscribe((res)=>{
+      console.log(res);
+      if(res.status==='OK'){
+        console.log(res.status);
+        
+        this.getData();
+        console.log(this.getData);
+        
+      }
+    })
+  }
+  getData(){
+    this.callsService.getData().subscribe((res)=>{
+      this.data=res;
+  });
+}
 }

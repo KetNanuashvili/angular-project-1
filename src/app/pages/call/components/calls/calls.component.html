@@ -1,11 +1,12 @@
 <div class="ng-container">
     <div *ngFor="let item of data" class="post" >
         <div >
+            <p style="color: red; font-size: 20px;">{{item.id}}</p>
             <h2 style="color: rgb(87, 10, 10);">{{item.title}}</h2>
             <p style="color:blueviolet">{{item.body}}</p>
         </div>
        <div>
-        <button >წაშლა</button>
+        <button (click)="delete(item)" >წაშლა</button>
         <button>განახლება</button>
        </div>
     </div>
