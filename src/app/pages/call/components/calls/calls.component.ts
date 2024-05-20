@@ -13,18 +13,14 @@ export class CallsComponent implements OnInit {
 
   }
   ngOnInit(): void{
-    this.callsService.getData().subscribe((res)=>{
-      this.data=res;
-      console.log(this.data);
-  
-    })
+ this.getData();
   }
 
   delete(item: { id: number; }){
     console.log(item);
     this.callsService.deleteItem(item.id).subscribe((res)=>{
       console.log(res);
-      if(res.status==='OK'){
+      if(res.status==='ok'){
         console.log(res.status);
         
         this.getData();
@@ -35,7 +31,7 @@ export class CallsComponent implements OnInit {
   }
   getData(){
     this.callsService.getData().subscribe((res)=>{
-      this.data=res;
+      this.data=res.data;
   });
 }
 }

@@ -11,13 +11,13 @@ export class CallsService {
    }
 
     getData(): Observable<any>{
-     return this.httpClient.get('https://jsonplaceholder.typicode.com/posts');
+     return this.httpClient.get('https://us-central1-js04-b4877.cloudfunctions.net/tasks');
     
     }
   
    
   deleteItem(id: number): Observable<any> {
-    return this.httpClient.delete(`https://jsonplaceholder.typicode.com/posts/${id}`);
+    return this.httpClient.delete(`https://us-central1-js04-b4877.cloudfunctions.net/tasks/${id}`);
   }
   }
 

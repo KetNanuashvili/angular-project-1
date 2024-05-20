@@ -2,8 +2,8 @@
     <div *ngFor="let item of data" class="post" >
         <div >
             <p style="color: red; font-size: 20px;">{{item.id}}</p>
-            <h2 style="color: rgb(87, 10, 10);">{{item.title}}</h2>
-            <p style="color:blueviolet">{{item.body}}</p>
+            <h2 style="color: rgb(87, 10, 10);">{{item.text}}</h2>
+            <p style="color:blueviolet">{{item.completed}}</p>
         </div>
        <div>
         <button (click)="delete(item)" >წაშლა</button>
