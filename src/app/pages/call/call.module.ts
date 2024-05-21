@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { CallRoutingModule } from './call-routing.module';
 import { CallsComponent } from './components/calls/calls.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { CallsComponent } from './components/calls/calls.component';
   ],
   imports: [
     CommonModule,
-    CallRoutingModule
+    CallRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class CallModule { }

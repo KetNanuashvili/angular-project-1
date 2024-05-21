@@ -1,13 +1,26 @@
+<form [formGroup]="form" (submit)="sebmetedForm(form)" class="post">
+    <input formControlName="text" type="text">
+    <button>შენახვა</button>
+</form>
 <div class="ng-container">
-    <div *ngFor="let item of data" class="post" >
+    <div *ngFor="let item of data; trackBy:trackByFn;" class="post"   [class.red]="!item.completed">
+        <!-- <div *ngFor="let item of data;" class="post"  [class.red]="!item.completed"> -->
+
         <div >
-            <p style="color: red; font-size: 20px;">{{item.id}}</p>
+            <p style=" font-size: 20px;">{{item.id}}</p>
             <h2 style="color: rgb(87, 10, 10);">{{item.text}}</h2>
             <p style="color:blueviolet">{{item.completed}}</p>
         </div>
        <div>
-        <button (click)="delete(item)" >წაშლა</button>
-        <button>განახლება</button>
+        <button (click)="delete(item)">წაშლა</button>
+      
+        <button>შესწორება</button>
+        <button *ngIf="!item.completed" (click)="activatedItem(item)">გააქტიურება</button>
+        <button *ngIf="item.completed" (click)="deactivatedItem(item)">დეაქტივაცია</button>
        </div>
     </div>
 <div>
+    
+<div *ngIf="!data" style="width: 1000px;height: 500px; background-color: white;">
+    loading
+</div>

@@ -1,7 +1,13 @@
 .post{
     width: 60%;
-    height: 100px;
-    background-color: wheat;
+    height: 70px;
     border-radius: 10px;
+    background-color: green;
     display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    align-items: center;
+}
+.red{
+    background-color: red;
 }
