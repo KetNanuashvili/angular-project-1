@@ -1,17 +1,19 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CallsService } from '../../../../services/calls.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { text } from 'express';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-calls',
   templateUrl: './calls.component.html',
   styleUrl: './calls.component.css'
 })
-export class CallsComponent implements OnInit {
+export class CallsComponent implements OnInit, OnDestroy{
   public data: any[]=null;
   public form: FormGroup;
+  subscription: Subscription = new Subscription();
 
   constructor( private callsService: CallsService, private fb:FormBuilder){
 
@@ -25,13 +27,16 @@ export class CallsComponent implements OnInit {
   }
 
   delete(item: { id: number; }){
-    // console.log(item);
-    this.callsService.deleteItem(item.id).subscribe((res)=>{
-      // console.log(res);
-        
-        this.getData();
-        // console.log(this.getData);
-    })
+    this.subscription.add(
+   // console.log(item);
+   this.callsService.deleteItem(item.id).subscribe((res)=>{
+    // console.log(res);
+      
+      this.getData();
+      // console.log(this.getData);
+  })
+    )
+ 
   }
   getData(){
     this.callsService.getData().subscribe((res)=>{
@@ -41,27 +46,35 @@ export class CallsComponent implements OnInit {
   });
 }
 activatedItem(item: any){
-  this.callsService.activateItem(item).subscribe((res)=>{
-    console.log(res);
-    if(res.status==='ok'){
-      this.getData();
-      
-    }
-  })
+  this.subscription.add(
+    this.callsService.activateItem(item).subscribe((res)=>{
+      console.log(res);
+      if(res.status==='ok'){
+        this.getData();
+        
+      }
+    })
+  )
+
 }
 
 deactivatedItem(item: any){
-  this.callsService.deactivateItem(item).subscribe((res)=>{
-    console.log(res);
-    if(res.status==='ok'){
-      this.getData();
-      
-    }
-  })
+  this.subscription.add(
+    this.callsService.deactivateItem(item).subscribe((res)=>{
+      console.log(res);
+      if(res.status==='ok'){
+        this.getData();
+        
+      }
+    })
+  )
+
 }
+
 trackByFn(index: any){
   return index
 }
+
 sebmetedForm(form: FormGroup){
   console.log(form);
   if(form.valid){
@@ -75,6 +88,10 @@ sebmetedForm(form: FormGroup){
     })
   }
   
+}
+
+ngOnDestroy(): void{
+  this.subscription.unsubscribe();
 }
 
 }
